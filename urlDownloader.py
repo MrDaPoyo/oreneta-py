@@ -20,6 +20,11 @@ def update_list(current_diectory, next_directory):
     first_words = get_url()
     return first_words
 
+def to_list(lines):
+    new = []
+    for line in lines:
+        new.append(line)
+    return new
 
 # Get first word of each line
 def get_url(lines):
@@ -27,12 +32,20 @@ def get_url(lines):
     #     print(line)
     return [str(line.split()[0])[2:-1] for line in lines]
 
+digits = "0123456789."
+
+# this one should work correctly Identation error
 def get_ip(lines):
     new_lines = []
-    for line in lines:
-        new_lines.append(line)
+    for line in lines: #if not digits,then check if protoweb
+        # check for each letter in line and see if it's not digits
+        add_line = True
+        for letter in line: # checking each letter in the line seeing if it's inside digits
+            if not digits.contains(letter):
+                add_line = False
+        if add_line:
+            new_lines.append(line) 
     return new_lines
-    
 
 # Execute the function
 urls = get_url(list)
@@ -45,15 +58,23 @@ for word in urls:
 # lol
 
 with open(r'urls.txt', 'w') as fp:
-    for item in urls:
+    for item in urls: # for url in urls add them to urls.txt 
         # write each item on a new line
         fp.write("%s\n" % item)
     print('Done')
 
+with open(r'ameriski_test_out.txt', 'w+') as fn:
+    url_llist = urlopen('https://raw.githubusercontent.com/ucanet/ucanet-registry/main/ucanet-registry.txt')
+    for entry in to_list(url_llist):
+        entry_parts = str(entry)[2:-3].split(" ")
+        print(entry_parts)
+        if entry_parts[2] == "protoweb":
+            #Protoweb
+            fn.write(f"p {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
+        elif not entry_parts[2].__contains__("."):
+            #Neocities
+            fn.write(f"n {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
+        else:
+            #Raw IP - lets see if it works
+            fn.write(f"i {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
 
-
-
-
-# my code should work, and it just did work
-"""My code also did and it's better swag Just kidding sorry don't get mad at me; Should we use both? kk"""
-# it's fine lol
