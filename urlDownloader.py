@@ -3,21 +3,17 @@ Poyo;       -
 Silver;     - we are going to have to make it get the file that contains all the urls from github if that's how you want it to find the urls
 
 TODO: 
-    - Requests --
+    - Requests -DONE-
     - Formatting -DONE-
     - Output must be a .txt file -DONE-
 '''
 
 from urllib.request import urlopen
 
-list = urlopen('https://raw.githubusercontent.com/ucanet/ucanet-registry/main/ucanet-registry.txt')
-
-print("response", list) #actually just see what it's giving us, incase of errors
-
 
 
 def update_list(current_diectory, next_directory):
-    first_words = get_url()
+    first_words = get_info()
     return first_words
 
 def to_list(lines):
