@@ -27,7 +27,9 @@ def fetch_body_text(url):
 
 # List of URLs to fetch
 urls = [
-    "https://en.wikipedia.org/wiki/Dyslexia",
+    "ucanet.net",
+    "ucanet.com",
+    "ucanet.co",
     # Add more URLs as needed
 ]
 
