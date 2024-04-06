@@ -1,51 +1,44 @@
 import requests
 
+import requests
+import dns.resolver # NOTE: dnspython package
+import tldextract
+# Poyo; -Whatchu doing? Oooooooh cool!
+# Security; - this is for sending requests using the Ucanet DNS server
+class CustomAdapter(requests.adapters.HTTPAdapter):
+    def __init__(self, nameservers):
+        self.nameservers = nameservers
+        super().__init__()
 
-class HostHeaderSSLAdapter(requests.adapters.HTTPAdapter):
-    def resolve(self, hostname):
-        # a dummy DNS resolver
-        import random
-        ips = [
-            '104.16.89.20',  # CloudFlare
-        ]
-        resolutions = {
-            'cdn.jsdelivr.net': random.choice(ips),
-        }
-        return resolutions.get(hostname)
+    def resolve(self, host, nameservers, record_type):
+        dns_resolver = dns.resolver.Resolver()
+        dns_resolver.nameservers = nameservers
+        answers = dns_resolver.query(host, record_type)
+        for rdata in answers:
+            return str(rdata)
 
-    def send(self, request, **kwargs):
-        from urllib.parse import urlparse
+    def get_connection(self, url, proxies=None):
+        ext = tldextract.extract(url)
+        fqdn = ".".join([ ext.subdomain, ext.domain, ext.suffix ])
 
-        connection_pool_kwargs = self.poolmanager.connection_pool_kw
+        print("FQDN: {}".format(fqdn))
+        a_record = self.resolve(fqdn, nameservers, 'A')
+        print("A record: {}".format(a_record))
 
-        result = urlparse(request.url)
-        resolved_ip = self.resolve(result.hostname)
+        resolved_url = url.replace(fqdn, a_record) # NOTE: Replace first occurrence only
+        print("Resolved URL: {}".format(resolved_url))
 
-        if result.scheme == 'https' and resolved_ip:
-            request.url = request.url.replace(
-                'https://' + result.hostname,
-                'https://' + resolved_ip,
-            )
-            connection_pool_kwargs['server_hostname'] = result.hostname  # SNI
-            connection_pool_kwargs['assert_hostname'] = result.hostname
-
-            # overwrite the host header
-            request.headers['Host'] = result.hostname
-        else:
-            # theses headers from a previous request may have been left
-            connection_pool_kwargs.pop('server_hostname', None)
-            connection_pool_kwargs.pop('assert_hostname', None)
-
-        return super(HostHeaderSSLAdapter, self).send(request, **kwargs)
+        return super().get_connection(resolved_url, proxies=proxies)
 
 
-url = 'https://cdn.jsdelivr.net/npm/bootstrap/LICENSE'
+url = 'http://fuck.asia' # Test for a ucanet-only domain
+
+
+nameservers = [ 
+        '135.148.41.26'
+]
 
 session = requests.Session()
-session.mount('https://', HostHeaderSSLAdapter())
-
-r = session.get(url)
-print(r.headers)
-
-r = session.get(url)
-print(r.headers)
+session.mount(url, CustomAdapter(nameservers))
+response = session.get(url)
+print(response)
