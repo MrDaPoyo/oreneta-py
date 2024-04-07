@@ -29,9 +29,8 @@ def fetch_body_text(url):
 
 # List of URLs to fetch
 urls = [
-    "ucanet.net",
-    "ucanet.com",
-    "ucanet.co",
+    "http://185.53.177.20", # the random ip from the random dns test
+    "http://135.148.41.26", # ucanet
     # Add more URLs as needed
 ]
 
