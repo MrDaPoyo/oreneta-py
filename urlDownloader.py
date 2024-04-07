@@ -9,7 +9,7 @@ TODO:
 '''
 
 from urllib.request import urlopen
-
+from cleaner import checkURL
 
 
 def update_list(current_diectory, next_directory):
@@ -38,7 +38,7 @@ def get_info():
                 #Neocities
                 fn.write(f"n {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
             else:
-                #Raw IP - lets see if it works
+                #Raw IP
                 if str(entry_parts[2]).strip() != "0.0.0.0":
                     fn.write(f"i {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
 get_info()
