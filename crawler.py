@@ -1,5 +1,7 @@
 "https://en.wikipedia.org/wiki/Dyslexia"
 
+ips = [] # list of loaded ips goes here
+
 import requests
 from bs4 import BeautifulSoup
 

@@ -10,15 +10,15 @@ def query_dns(domain, dns_server):
     
     try:
         answers = resolver.resolve(domain) # Queries the domain to the dns server
-        for rdata in answers: # 
-            print(rdata) # For IP in x print
+        for rdata in answers:
+            print(rdata)
     except dns.exception.DNSException as e:
-        print("Error:", e) # If not, print error
+        print("Error:", e)
 
 
 nameservers = [ 
         '135.148.41.26'
 ]
 
-print(query_dns("fuck.asia", "135.148.41.26")) # 135.148.41.26 is Ucanet's DNS IP
+print(query_dns("fuck.asia", "135.148.41.26")) # 135.148.41.26 = Ucanet's DNS IP
 
