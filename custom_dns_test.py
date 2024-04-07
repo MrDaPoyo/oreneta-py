@@ -9,11 +9,11 @@ def query_dns(domain, dns_server):
     resolver.nameservers = [dns_server]
     
     try:
-        answers = resolver.query(domain)
-        for rdata in answers:
-            print(rdata)
+        answers = resolver.resolve(domain) # Queries the domain to the dns server
+        for rdata in answers: # 
+            print(rdata) # For IP in x print
     except dns.exception.DNSException as e:
-        print("Error:", e)
+        print("Error:", e) # If not, print error
 
 
 nameservers = [ 
