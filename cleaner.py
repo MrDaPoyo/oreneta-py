@@ -12,5 +12,5 @@ def checkURL(url, HTTPS=False): # check if website is up and running by URL
         return False
 
 
-# Test ->
+# Test --> OK
 print(checkURL("wikipedia.org"))
