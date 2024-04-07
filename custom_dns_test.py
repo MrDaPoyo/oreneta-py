@@ -1,5 +1,5 @@
 import requests
-import dns.resolver # NOTE: dnspython package
+import dns.resolver # NOTE: Dnspython package
 
 # Poyo; -Whatchu doing? Oooooooh cool!
 # Security; - this is for sending requests using the Ucanet DNS server
@@ -20,4 +20,5 @@ nameservers = [
         '135.148.41.26'
 ]
 
-print(query_dns("fuck.asia", "135.148.41.26"))
+print(query_dns("fuck.asia", "135.148.41.26")) # 135.148.41.26 is Ucanet's DNS IP
+
