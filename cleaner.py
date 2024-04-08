@@ -20,14 +20,14 @@ def checkURL(url, HTTPS=False): # check if website is up and running by Internet
         return "ERR"
 
 def read_url(location):
+    url = []
     with open(str(location), "r") as data:
-        url = []
-        ip = []
-        as_list = data.split("/n")
-        url.append(as_list[0])
-        ip.append(as_list[1])
+        for info in data:
+            as_list = info.split(f"/n")
+            url.append(as_list[0])
+    return url
 
-
+print(read_url("urls.txt"))
 
 
 
