@@ -24,8 +24,8 @@ def read_url(location):
         url = []
         ip = []
         as_list = data.split("/n")
-		url.append(as_list[0])
-		ip.append(as_list[1])
+        url.append(as_list[0])
+        ip.append(as_list[1])
 
 
 
