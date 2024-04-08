@@ -19,6 +19,17 @@ def checkURL(url, HTTPS=False): # check if website is up and running by Internet
         print(f"ERR " + str(exception))
         return "ERR"
 
+def read_url(location):
+    with open(str(location), "r") as data:
+        url = []
+        ip = []
+        as_list = data.split("/n")
+		url.append(as_list[0])
+		ip.append(as_list[1])
+
+
+
+
 
 # Test --> OK -> Domain exists and operative
 checkURL("wikipedia.org")
