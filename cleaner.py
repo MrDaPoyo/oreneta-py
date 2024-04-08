@@ -1,7 +1,6 @@
 import requests
 
 def checkURL(url, HTTPS=False): # check if website is up and running by Internet URL
-    
     try:
         if HTTPS == True:
             x = requests.get("https://" + url)
