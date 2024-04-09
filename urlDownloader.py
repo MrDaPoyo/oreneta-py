@@ -24,6 +24,7 @@ def to_list(lines):
 
 """I'm an octopus! =;O;="""
 # lol
+"""Do you know where's my friend? """
 
 def get_info():
     with open(r'urls.txt', 'w+') as fn:
