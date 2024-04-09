@@ -21,14 +21,14 @@ def checkURL(url, HTTPS=False): # check if website is up and running by Internet
 
 def read_url(location): # Reads urls.txt and transforms it into a clean list
     url = []
-    with open(str(location), "r") as data:
-        for info in data:
-            as_list = info.split(",")
-            url.append(as_list[0])
+    try:
+        with open(str(location), "r") as data:
+            for info in data:
+                as_list = info.split(",")
+                url.append(as_list[0])
+    except Exception as exception:
+        return exception
     return url
-
-print(read_url("urls.txt"))
-
 
 
 # Test --> OK -> Domain exists and operative
@@ -37,3 +37,8 @@ checkURL("wikipedia.org")
 checkURL("skibidi.org")
 # Test --> ERR / Exception NameResolutionError -> Domain doesn't exist
 checkURL("rosesareviolet.org")
+
+# Test --> Returns a list
+print(read_url("urls.txt"))
+# Test --> Returns an error
+print(read_url("url.txt"))
