@@ -1,15 +1,15 @@
 import time
 
-print("I'm an octopus! =;O;=")
+print("Octopus: I'm an octopus! =;O;=")
 time.sleep(1)
 print("...")
 time.sleep(2)
-x = input("Are you an octopus? =;v;= \nYou: ")
+x = input("Octopus: Are you an octopus? =;v;= \nYou: ")
 if "y" in x or "Y" in x:
-    print("\nOh, really? Me too! \;u;/")
+    print("\nOctopus: Oh, really? Me too! \;u;/")
     time.sleep(2)
-    print("I'm kinda alone tho... =;o;=")
+    print("Octopus: I'm kinda alone tho... =;o;=")
     time.sleep(2)
-    print("I wish you could help me to find my partner...")
+    print("Octopus: I wish you could help me to find my partner...")
 else:
-    print("Aww =;n;=")
+    print("Sad octopus: Aww =;n;=")
