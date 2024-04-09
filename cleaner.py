@@ -40,5 +40,5 @@ checkURL("rosesareviolet.org")
 
 # Test --> Returns a list
 print(read_url("urls.txt"))
-# Test --> Returns an error
+# Test --> Returns error "[Errno 2] No such file or directory: 'url.txt'"
 print(read_url("url.txt"))
