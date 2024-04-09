@@ -10,7 +10,7 @@ Types:
     (I) (URL) (IP address),
     (P/N) (URL/USER) (IP address)
 Example:
-*   I status.cafe 127.0.0.1
+   I status.cafe 127.0.0.1
 ### How to read urls.txt:
 Functions:
     read_urls(directory): Returns a list given the ubication of urls.txt. 
