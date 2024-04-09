@@ -19,4 +19,4 @@ Made by (In alphabetical order) @Security@sundown, Silver and Poyo.
     Execute urlDownloader.py
 
 
-Hi there! Have you seen my friend? \ ;v; /
+*Octopus: Hi there! Have you seen my friend?* \ ;v; /
