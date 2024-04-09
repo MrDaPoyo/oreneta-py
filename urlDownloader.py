@@ -33,12 +33,12 @@ def get_info():
             print(entry_parts)
             if entry_parts[2] == "protoweb":
                 #Protoweb
-                fn.write(f"p {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
+                fn.write(f"p {str(entry_parts[0])} {str(entry_parts[2]).strip()},\n") 
             elif not entry_parts[2].__contains__("."):
                 #Neocities
-                fn.write(f"n {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
+                fn.write(f"n {str(entry_parts[0])} {str(entry_parts[2]).strip()},\n") 
             else:
                 #Raw IP
                 if str(entry_parts[2]).strip() != "0.0.0.0":
-                    fn.write(f"i {str(entry_parts[0])} {str(entry_parts[2]).strip()}\n") 
+                    fn.write(f"i {str(entry_parts[0])} {str(entry_parts[2]).strip()},\n") 
 get_info()
