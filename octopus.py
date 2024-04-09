@@ -1,5 +1,9 @@
 import time
 
+# spawn(Octopus.male())
+# spawn(Octopus.female())
+# replace(Octopus.female())
+
 print("Octopus: I'm an octopus! =;O;=")
 time.sleep(1)
 print("...")
