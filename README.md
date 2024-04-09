@@ -1,4 +1,4 @@
-# Oreneta Search Engine (OSE.v1.dev)
+# New Oreneta Search Engine (NOSE.v1.dev)
 ## Smol browser for the Ucanet written in Python.
 
 Made by (In alphabetical order) @Security@sundown, Silver and Poyo.
