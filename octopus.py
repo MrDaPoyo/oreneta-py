@@ -14,6 +14,6 @@ if "y" in x or "Y" in x:
     time.sleep(2)
     print("Octopus: I'm kinda alone tho. I once had a friend, but she left =;o;=")
     time.sleep(2)
-    print("Octopus: I wish you could help me to find my friend...")
+    print("I wish you could help me to find her...")
 else:
     print("Sad octopus: Aww =;n;=")
