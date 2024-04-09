@@ -6,7 +6,7 @@ TODO:
     - Requests -DONE-
     - Formatting -DONE-
     - Output must be a .txt file -DONE-
-    - Optimize code
+    - Optimize code --
 '''
 
 from urllib.request import urlopen
