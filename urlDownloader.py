@@ -9,7 +9,6 @@ TODO:
 '''
 
 from urllib.request import urlopen
-from cleaner import checkURL
 
 
 def update_list(current_diectory, next_directory):
