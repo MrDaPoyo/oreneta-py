@@ -8,7 +8,7 @@ print("Octopus: I'm an octopus! =;O;=")
 time.sleep(1)
 print("...")
 time.sleep(2)
-x = input("Octopus: Are you an octopus? =;v;= (Yes or no?)\nYou: ")
+x = input("Octopus: Are you an octopus? =;v;= (Yes I am!/No sorry)\nYou: ")
 if "y" in x or "Y" in x:
     print("\nOctopus: Oh, really? Me too! \;u;/")
     time.sleep(2)
