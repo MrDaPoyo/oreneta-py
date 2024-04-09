@@ -19,11 +19,11 @@ def checkURL(url, HTTPS=False): # check if website is up and running by Internet
         print(f"ERR " + str(exception))
         return "ERR"
 
-def read_url(location):
+def read_url(location): # Reads urls.txt and transforms it into a clean list
     url = []
     with open(str(location), "r") as data:
         for info in data:
-            as_list = info.split(f"/n")
+            as_list = info.split(",")
             url.append(as_list[0])
     return url
 
