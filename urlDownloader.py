@@ -1,11 +1,12 @@
 '''
-Poyo;       - 
+Poyo;       - okadoka
 Silver;     - we are going to have to make it get the file that contains all the urls from github if that's how you want it to find the urls
 
 TODO: 
     - Requests -DONE-
     - Formatting -DONE-
     - Output must be a .txt file -DONE-
+    - Optimize code
 '''
 
 from urllib.request import urlopen
