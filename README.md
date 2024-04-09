@@ -9,6 +9,6 @@ Made by (In alphabetical order) @Security@sundown, Silver and Poyo.
             Type( I(P),P(rotoweb),N(eocities), )
 ###     How to read urls.txt:
             Functions:
-                read_urls(directory): Returns a list given the ubication of **urls.txt**. EX: directory1/test/**urls.txt**
+                read_urls(directory): Returns a list given the ubication of urls.txt. EX: directory1/test/urls.txt
 ###     How to update the data inside urls.txt
-            Execute **urlDownloader.py**
+            Execute urlDownloader.py
