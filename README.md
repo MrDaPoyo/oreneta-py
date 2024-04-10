@@ -3,7 +3,6 @@
 
 Made by (In alphabetical order) @Security@sundown, Silver and Poyo.
 
-
 ## Urls.txt:
 ### Format:
     Types: 
