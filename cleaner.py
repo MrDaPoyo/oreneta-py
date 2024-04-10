@@ -1,4 +1,5 @@
 import requests
+import socket
 
 def checkURL(url, HTTPS=False): # check if website is up and running by Internet URL
     try:
@@ -30,6 +31,11 @@ def read_url(location): # Reads urls.txt and transforms it into a clean list
         return exception
     return url
 
+def neocities(input):
+    url = str(input) + ".neocities.org"
+    ip = socket.gethostbyname('google.com')
+    return (f"{url} {ip}")
+
 
 # Test --> OK -> Domain exists and operative
 checkURL("wikipedia.org")
@@ -42,3 +48,6 @@ checkURL("rosesareviolet.org")
 print(read_url("urls.txt"))
 # Test --> Returns error "[Errno 2] No such file or directory: 'url.txt'"
 print(read_url("url.txt"))
+
+# Test
+print(neocities("uwu"))
