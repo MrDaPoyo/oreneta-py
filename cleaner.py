@@ -32,8 +32,8 @@ def read_url(location): # Reads urls.txt and transforms it into a clean list
     return url
 
 def neocities(input):
-    url = str(input) + ".neocities.org"
-    ip = socket.gethostbyname('google.com')
+    url = str(input + ".neocities.org")
+    ip = socket.gethostbyname(url)
     return (f"{url} {ip}")
 
 
@@ -50,4 +50,4 @@ print(read_url("urls.txt"))
 print(read_url("url.txt"))
 
 # Test
-print(neocities("uwu"))
+print(neocities("dapoyo"))
