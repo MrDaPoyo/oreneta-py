@@ -17,7 +17,7 @@ def checkURL(url, HTTPS=False): # check if website is up and running by Internet
             return False
     except Exception as exception:
         
-        print(f"ERR " + str(exception))
+        print(f"ERROR " + str(exception))
         return "ERR"
 
 def read_url(location): # Reads urls.txt and transforms it into a clean list
