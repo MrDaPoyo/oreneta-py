@@ -34,7 +34,7 @@ def read_url(location): # Reads urls.txt and transforms it into a clean list
 def neocities(input):
     url = str(input + ".neocities.org")
     ip = socket.gethostbyname(url)
-    return (f"{url} {ip}")
+    return (f"{url}")
 
 
 # Test --> OK -> Domain exists and operative
