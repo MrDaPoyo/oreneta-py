@@ -1,6 +1,6 @@
 from cleaner import neocities
 
-function_dict = {"neocities":neocities,"syntax":print("Syntax: [command] [arg1] NOTE: Ignore the brackets '[]'")}
+function_dict = {"neocities":neocities}
 
 while True:
     INPUT = str(input("COMMAND: "))
