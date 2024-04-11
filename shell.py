@@ -5,7 +5,7 @@ function_dict = {"neocities":neocities}
 while True:
     INPUT = str(input("COMMAND: "))
     if INPUT == "syntax":
-        print("Syntax: [command] [arg1]")
+        print("Syntax: [command] [arg1] NOTE: Ignore the brackets '[]'")
     else:
         command = INPUT.split(' ')[0]
         print(command) 
