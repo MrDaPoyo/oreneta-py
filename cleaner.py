@@ -37,6 +37,8 @@ def neocities(input):
     return (f"{url}")
 
 
+'''
+
 # Test --> OK -> Domain exists and operative
 checkURL("wikipedia.org")
 # Test --> NOK -> Domain exists but not operative
@@ -51,3 +53,5 @@ print(read_url("url.txt"))
 
 # Test
 print(neocities("dapoyo"))
+
+'''
