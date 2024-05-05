@@ -1,7 +1,39 @@
 "https://en.wikipedia.org/wiki/Dyslexia"
+'''
+
+TODO:
+- Feed the crawler
+- Store the data
+
+'''
+
+
+
+import requests
+import dns.resolver # NOTE: Dnspython package
+
+# Poyo; -Whatchu doing? Oooooooh cool!
+# Security; - this is for sending requests using the Ucanet DNS server
+
+def query_dns(domain, dns_server):
+    resolver = dns.resolver.Resolver()
+    resolver.nameservers = [dns_server]
+    
+    try:
+        answers = resolver.resolve(domain) # Queries the domain to the dns server
+        for rdata in answers:
+            print(rdata)
+    except dns.exception.DNSException as e:
+        print("Error:", e)
+
+
+nameservers = [ 
+        '135.148.41.26'
+]
 
 ips = [] # list of loaded ips goes here
-
+ips = open("urls.json", "r")
+print(ips)
 import requests
 from bs4 import BeautifulSoup
 
@@ -29,10 +61,11 @@ def fetch_body_text(url):
 
 # List of URLs to fetch
 urls = [
-    "http://185.53.177.20", # the random ip from the random dns test
-    "http://135.148.41.26", # ucanet
-    # Add more URLs as needed
+    # Retrieve URLs
 ]
+
+for ip in ips:
+    urls.append(query_dns(ip, "135.148.41.26"))
 
 # Iterate through the list of URLs
 for url in urls:
