@@ -43,3 +43,16 @@ def get_info():
                 if str(entry_parts[2]).strip() != "0.0.0.0":
                     fn.write(f"i {str(entry_parts[0])} {str(entry_parts[2]).strip()},\n") 
 get_info()
+print("------")
+def get_IPs():
+    ip = []
+    with open(r'urls.txt', 'r') as f:
+        for line in f:
+            a_ip = line.split(" ")[2]
+            ip.append(a_ip[:-2])
+
+    print(ip)
+    with open(r'ips.txt', 'w') as f:
+        f.write(str(ip))
+    return ip
+print(get_IPs())

@@ -1,5 +1,6 @@
 import requests
 import socket
+from crawler import *
 
 def checkURL(url, HTTPS=False): # check if website is up and running by Internet URL
     try:
@@ -35,6 +36,8 @@ def neocities(input):
     url = str(input + ".neocities.org")
     ip = socket.gethostbyname(url)
     return (f"{url}")
+
+query_dns("wikipedia.org", "")
 
 
 '''

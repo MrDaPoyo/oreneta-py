@@ -7,8 +7,9 @@ TODO:
 
 '''
 
-
-
+import requests
+from bs4 import BeautifulSoup
+import json
 import requests
 import dns.resolver # NOTE: Dnspython package
 
@@ -27,15 +28,8 @@ def query_dns(domain, dns_server):
         print("Error:", e)
 
 
-nameservers = [ 
-        '135.148.41.26'
-]
+nameservers = '135.148.41.26'
 
-ips = [] # list of loaded ips goes here
-ips = open("urls.json", "r")
-print(ips)
-import requests
-from bs4 import BeautifulSoup
 
 # Function to fetch the body text from a given URL
 def fetch_body_text(url):
@@ -60,24 +54,12 @@ def fetch_body_text(url):
         return None
 
 # List of URLs to fetch
-urls = [
-    # Retrieve URLs
-]
 
-for ip in ips:
-    urls.append(query_dns(ip, "135.148.41.26"))
+urls = json.load(open("urls.json"))
+print(urls)
 
-# Iterate through the list of URLs
-for url in urls:
-    print(f"Fetching {url}...")
-    
-    # Fetch body text from the URL
-    body_text = fetch_body_text(url)
-    
-    # Print the body text if available
-    if body_text:
-        print("Body Text:")
-        print(body_text)
-        print("-----------------------------")
+ips = []
 
-query_dns("google.com", '135.148.41.26')
+
+print(ips)
+query_dns("google.com", nameservers)
