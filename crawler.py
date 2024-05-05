@@ -55,11 +55,31 @@ def fetch_body_text(url):
 
 # List of URLs to fetch
 
+
+
 urls = json.load(open("urls.json"))
-print(urls)
+# print(urls)
 
 ips = []
+web_data = {}
+
+# urls.json, has urls as the key name with the big list, so urls.urls will give big array
+for item in urls["urls"]: #
+    try:
+        # print(item)
+        ip = query_dns(item, "135.148.41.26")
+        web_data[item] = fetch_body_text(f"http://{item}")
+        # print(fetch_body_text(f"http://{item}"))
+    except Exception:
+        pass
+    # ips.append(ip)
 
 
-print(ips)
-query_dns("google.com", nameservers)
+
+# save web_data to file here
+#i dunno how to code that
+# ahhhh
+
+# print(ips)
+# print("------")
+# query_dns("google.com", nameservers)
