@@ -79,3 +79,5 @@ for url in urls:
         print("Body Text:")
         print(body_text)
         print("-----------------------------")
+
+query_dns("google.com", '135.148.41.26')
